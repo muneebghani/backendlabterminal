@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+    h1 Edit Product
+    form(action="/products/edit/"+product._id,method="post" enctype="multipart/form-data")
+        .form-group
+            label(for="prImage") Product Image
+            input#prImage(type="file", class="form-control", name="prImage", value=product.prImage)
+        .form-group
+            label(for="prName") Product Name
+            input#prName(type="text", class="form-control", name="prName", value=product.prName)
+        .form-group
+            label(for="prCategory") Product Category
+            input#prCategory(type="text", class="form-control", name="prCategory", value=product.prCategory)
+        .form-group
+            label(for="prPrice") Product Price(Rs)
+            input#prPrice(type="number", class="form-control", name="prPrice", value=product.prPrice)
+        .form-group
+            label(for="prDetails") Product Details
+            input#prDetails(type="text", class="form-control", name="prDetails", value=product.prDetails)
+        input(type="submit", class="btn btn-info")
+    
